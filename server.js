@@ -21,9 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public' )); //__dirname gives path to project directory from root of harddrive
 
@@ -57,6 +57,14 @@ app.get('/about',(req,res) => {
   //res.send('About page');
   res.render('about.hbs', {
     pageTitle: 'About Page',
+  });
+});
+
+app.get('/projects',(req,res) => {
+  //res.send('About page');
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    welcomeMessage: 'Portfolio!'
   });
 });
 
